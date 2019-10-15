@@ -1,14 +1,15 @@
 var db = require("../models");
+const express = require('express')
 
-module.exports = function(app) {
-  // Find all jokes and return them to the user with res.json
-  app.get("/api/jokes", function(req, res) {
+const jokeRouter = express.Router()
+
+  jokeRouter.get("/api/jokes", function(req, res) {
     db.Jokes.findAll({}).then(function(dbJokes) {
       res.json(dbJokes);
     });
   });
 
-  app.get("/api/jokes/:id", function(req, res) {
+  jokeRouter.get("/api/jokes/:id", function(req, res) {
     // Find one Jokes with the id in req.params.id and return them to the user with res.json
     db.Jokes.findOne({
       where: {
@@ -19,7 +20,7 @@ module.exports = function(app) {
     });
   });
 
-  app.post("/api/jokes", function(req, res) {
+  jokeRouter.post("/api/jokes", function(req, res) {
     // Create an Jokes with the data available to us in req.body
     console.log(req.body);
     db.Jokes.create(req.body).then(function(dbJokes) {
@@ -27,7 +28,7 @@ module.exports = function(app) {
     });
   });
 
-  app.delete("/api/jokes/:id", function(req, res) {
+  jokeRouter.delete("/api/jokes/:id", function(req, res) {
     // Delete the Jokes with the id available to us in req.params.id
     db.Jokes.destroy({
       where: {
@@ -37,4 +38,6 @@ module.exports = function(app) {
       res.json(dbJokes);
     });
   });
-};
+
+
+module.exports = jokeRouter

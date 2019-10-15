@@ -1,28 +1,40 @@
 var express = require("express");
 
-// Sets up the Express App
-// =============================================================
+var session = require("express-session");
+
+require('dotenv').config();
+
+var db = require("./models");
+
+const askRouter = require('./routes/ask-api-routes');
+
+const commentRouter = require("./routes/ask_comments-api-routes.js")
+
+const jokesRouter = require("./routes/jokes-api-routes")
+
+const storyRouter = require("./routes/story-api-routes")
+
+const authRouter = require("./routes/user-api-routes")
+
 var app = express();
 var PORT = process.env.PORT || 8080;
 
-// Requiring our models for syncing
-var db = require("./models");
-
-// Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Static directory
-app.use(express.static("public"));
+app.use(express.static("assets"));
 
 // Routes
 // =============================================================
-require("./routes/ask-api-routes.js")(app);
-require("./routes/ask_comments-api-routes.js")(app);
-require("./routes/jokes-api-routes.js")(app);
-require("./routes/story-api-routes.js")(app);
-require("./routes/user-api-routes.js")(app);
 
+app.use('/api', askRouter)
+app.use('/api', commentRouter)
+app.use('/api', jokesRouter)
+app.use('/api', storyRouter)
+app.use('/auth', authRouter)
+
+app.use(session({ secret: process.env.SESSION_SECRET, resave: true, saveUninitialized: true }));
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
