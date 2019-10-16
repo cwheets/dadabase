@@ -47,20 +47,31 @@ body{
   
 }
 
+.backgroundCards{
+  background-image: url("../images/GAL-GALPOP3247-PHONE-PopArt-Background4-.jpg");
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 55%;
+}
+
 .flexThis{
 display: flex;
 justify-content: center;
 align-items: center;
 flex-direction: column;
-
 }
 
 
 #inputBackground{
-  background-image: url("../images/images.jpg");
-  padding: 5px;
-  border-radius: .25rem;
+  background-image: url("../images/GAL-GALPOP3247-PHONE-PopArt-Background4-.jpg");
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  
+  
 }
+
 
 #storyTitle{
   width: 100%;
@@ -79,18 +90,24 @@ flex-direction: column;
   float: right;
   background-color: transparent;
   border: none;
+  font-family: 'Bangers', cursive;
+  font-size: 24px;
+  color: white;
+  text-shadow: 1px 1px 2px black, 0 0 25px yellow, 0 0 5px yellowgreen;
 }
 
 #storyButton:hover{
-  border: solid yellow 1px;
+  border: solid yellow 2px;
 }
 
 #cardBody{
-  width: 55%;
+  width: 100%;
   margin: 2.5px;
   border-radius: .25rem;
   border: solid 1px black;
   height: 60vh;
+  /* height: auto; */
+
 }
 
 #postArea{
@@ -103,4 +120,16 @@ flex-direction: column;
 #buttonDiv{
   display: flex;
   justify-content: flex-end;
+}
+
+
+footer{
+  position: fixed;
+  margin-bottom: 0%;
+  bottom: 0;
+  width: 100%;
+  font-family: 'Fontdiner Swanky', cursive;
+  color:  rgba(255, 255, 0, 0.911);
+  text-shadow: 2px 2px red;
+  text-align: center;
 }
