@@ -3,7 +3,7 @@ const express = require('express')
 
 const jokeRouter = express.Router()
 
-  jokeRouter.get("jokes", function(req, res) {
+  jokeRouter.get("/jokes", function(req, res) {
     db.Jokes.findAll({}).then(function(dbJokes) {
       res.json(dbJokes);
     });

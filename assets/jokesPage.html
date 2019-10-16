@@ -10,7 +10,7 @@
 
     <!-- Style CSS -->
 
-    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="stylesheet" type="text/css" href="./css/jokes.css">
 
     <!-- Text -->
     <link href="https://fonts.googleapis.com/css?family=Fontdiner+Swanky|Oswald&display=swap" rel="stylesheet">
@@ -34,55 +34,33 @@
 
  <!-- Dad Jokes Div -->
 <div class = "dadjokes">
-  <img id = "jokes" src="../assets/images/dadColoR.jpg" alt="dadjokes">
+  <img id = "jokes" src="/images/dadColoR.jpg" alt="dadjokes">
 </div>
 
 
-<button class="submitJoke">Submit Your Joke</button>
-
-
-    <!-- Form to create jokes
-      <div class="container">
-          <div class="row">
-          <div class="col-md-12">
-          <div class="well well-sm">
-              <form class="form-horizontal" method="post">
-                  <fieldset>
-                  <legend class="text-left header">Jokes from Dad</legend>
-                                  
-                      <div class="form-group">
-                          <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-pencil-square-o bigicon"></i></span>
-                      <div class="col-md-8">
-                              <a>Joke</a>
-                          <textarea class="form-control" id="message" name="message" placeholder="Write your joke here!" rows="7"></textarea>
-                      </div>
-                      </div>
-                      <div class="form-group">
-                          <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-pencil-square-o bigicon"></i></span>
-                      <div class="col-md-8">
-                              <a>Punchline</a>
-                          <textarea class="form-control" id="message" name="message" placeholder="Add the punchline here!" rows="7"></textarea>
-                      </div>
-                      </div>
-          
-                      <div class="form-group">
-                      <div class="col-md-12 text-left">
-                          <button type="submit" class="btn btn-primary btn-lg">Publish</button>
-                      </div>
-                      </div>
-                  </fieldset>
-              </form>
-          </div>
-          </div>
-          </div>
-      </div> -->
+<!-- <button class="submitJoke">Submit Your Joke</button> -->
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner" id="carousel1holder">
+    <div class="carousel-item active">
+    </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+</div>
 
     
 
     <!-- Form to create jokes -->
-<!--       <br>
+      <br>
       <div class="modal fade" id="modalContactForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
                aria-hidden="true">
+               <form id="joke-form" action="">
                <div class="modal-dialog" role="document">
                  <div class="modal-content">
                    <div class="modal-header text-center">
@@ -96,28 +74,20 @@
              
                      <div class="md-form mb-5">
                        <i class="fas fa-tag prefix grey-text"></i>
-                       <input type="text" id="form32" class="form-control validate">
+                       <input type="text" id="joke" class="form-control validate">
                        <label data-error="wrong" data-success="right" for="form32">Joke</label>
                      </div>
-
-                     <div class="md-form mb-5">
-                      <i class="fas fa-tag prefix grey-text"></i>
-                      <input type="text" id="form32" class="form-control validate">
-                      <label data-error="wrong" data-success="right" for="form32">Punchline</label>
-                    </div>
- 
-             
                    </div>
                    <div class="modal-footer d-flex justify-content-center">
-                     <button class="btn btn-unique">Publish <i class="fas fa-paper-plane-o ml-1"></i></button>
+                     <button type="submit" class="btn btn-unique">Publish <i class="fas fa-paper-plane-o ml-1"></i></button>
                    </div>
                  </div>
                </div>
              </div>
-             
+             </form>
              <div class="text-center">
-               <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalContactForm">Share a Dad Joke</a>
-             </div>  -->
+               <a href="" class="btn btn-default btn-rounded mb-4 submitJoke" data-toggle="modal" data-target="#modalContactForm">Submit Your Joke!</a>
+             </div> 
     <!-- End of form to create jokes -->
 
 
