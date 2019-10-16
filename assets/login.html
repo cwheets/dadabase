@@ -21,32 +21,28 @@
     <ul class="topnav">
         <li><a href="jokesPage.html">Jokes</a></li>
         <li><a href="storiesPage.html">Stories</a></li>
-        <li><a href="#contact">Articles</a></li>
         <li><h1>Dadabase</h1></li>
         <li class="right"><a href="login.html">Login</a></li>
-        <li class="right"><a href="contactUs.html">Contact</a></li>
         <li class="right"><a href="aboutUs.html">About</a></li>
       </ul>
 
 <!-- Start of Login form -->
       <form id="login">
+              <h2>Login</h2>
           <div class="container">
             <div class="form-group">
                 <div class="note">
-                    <h2>Login</h2>
+                    
                 </div>
-              <label for="Username">User Name</label>
+                <br>
+              <!-- <label for="Username">User Name</label> -->
               <input type="text" class="form-control" name="name" id="username-login" aria-describedby="emailHelp" placeholder="Enter Username">
             </div>
             <div class="form-group">
-              <label for="exampleInputPassword1">Password</label>
+              <!-- <label for="exampleInputPassword1">Password</label> -->
               <input type="password" name="password" class="form-control" id="password-login" placeholder="Password">
             </div>
             <div class="form-check">
-              <input type="checkbox" class="form-check-input" id="exampleCheck1">
-              <label class="form-check-label" for="exampleCheck1">Remember Me</label>
-            <br>
-            <br>
             <button type="submit" class="btn btn-primary">Login</button>  <a id="registerBtn" href="#">Register</a>
         </div>
           </form>
@@ -72,11 +68,7 @@
                         <div class="form-group">
                             <input id="password-register-two" type="password" class="form-control" placeholder="Confirm Password *"/>
                         </div>
-                        <button class="btn btn-primary">I'm a Dad</button>
-                        <button class="btn btn-primary">I'm not a Dad</button>
-                        <br>
-                        <br>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary" id=submitBtn >Submit</button>
             </div>
         </div>
       </form>
