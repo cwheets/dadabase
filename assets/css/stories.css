@@ -40,8 +40,6 @@ h1{
   text-shadow: 2px 2px red;
 }
 
-
-
 /* <!-- Body --> */
 
 body{
@@ -49,43 +47,60 @@ body{
   
 }
 
-#jokes{
-  border-radius: 35%;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 100px;
-  width: 50%;
-  position: relative;
-  overflow: hidden;
+.flexThis{
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+
+}
+
+
+#inputBackground{
+  background-image: url("../images/images.jpg");
+  padding: 5px;
+  border-radius: .25rem;
+}
+
+#storyTitle{
+  width: 100%;
+  margin: 2.5px;
+  border-radius: .25rem;
+}
+#storyBody{
+  width: 100%;
+  margin: 2.5px;
+  border-radius: .25rem;
+}
+
+#storyButton{
+  border-radius: .25rem;
+  width: 25%;
+  float: right;
+  background-color: transparent;
+  border: none;
+}
+
+#storyButton:hover{
+  border: solid yellow 1px;
+}
+
+#cardBody{
+  width: 55%;
+  margin: 2.5px;
+  border-radius: .25rem;
+  border: solid 1px black;
+  height: 60vh;
+}
+
+#postArea{
+  display: flex;
+  flex-direction: column;
+  width: 55%;
   
 }
 
-.submitJoke{
-  position: absolute;
-  position: absolute;
-  right: 650px;
-  bottom: 450px;
-  background-image: url("../images/images.jpg");
-  color: white;
-  text-shadow: 2px 2px black;
-  font-size: 30px;
-  font-family: 'Bangers', cursive;
-  border: none;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+#buttonDiv{
+  display: flex;
+  justify-content: flex-end;
 }
-
-footer{
-    position: fixed;
-    margin-bottom: 0%;
-    bottom: 0;
-    width: 100%;
-    font-family: 'Fontdiner Swanky', cursive;
-    color:  rgba(255, 255, 0, 0.911);
-    text-shadow: 2px 2px red;
-    text-align: center;
-}
-
-
