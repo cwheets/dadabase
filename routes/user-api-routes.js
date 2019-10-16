@@ -1,40 +1,50 @@
 var db = require("../models");
+const bcrypt = require('bcrypt');
+const express = require('express')
+const authRoutes = express.Router()
 
-module.exports = function(app) {
   // Find all user and return them to the user with res.json
-  app.get("/api/user", function(req, res) {
+  authRoutes.get("/user", function(req, res) {
+
     db.User.findAll({}).then(function(dbUser) {
+
       res.json(dbUser);
     });
   });
 
-  app.get("/api/user/:id", function(req, res) {
-    // Find one User with the id in req.params.id and return them to the user with res.json
+  authRoutes.post('/user/register',function(req,res){
+    console.log("test")
+    db.User.create({
+
+        username:req.body.username,
+        password:req.body.password
+
+    }).then(function(newUser){
+
+        res.json(newUser);
+    })
+
+})
+
+  authRoutes.post("/user/login", function(req, res) {
+    
     db.User.findOne({
-      where: {
-        id: req.params.id
-      }
-    }).then(function(dbUser) {
-      res.json(dbUser);
-    });
-  });
+      where:{
+          username: req.body.username
 
-  app.post("/api/user", function(req, res) {
-    // Create an User with the data available to us in req.body
-    console.log(req.body);
-    db.User.create(req.body).then(function(dbUser) {
-      res.json(dbUser);
-    });
-  });
-
-  app.delete("/api/user/:id", function(req, res) {
-    // Delete the User with the id available to us in req.params.id
-    db.User.destroy({
-      where: {
-        id: req.params.id
+      }}).then(function(dbUser){
+          //compares password send in req.body to one in database, will return true if matched.
+      if(bcrypt.compareSync(req.body.password,dbUser.password)) {
+          //create new session property "user", set equal to logged in user
+          req.session.user = dbUser
       }
-    }).then(function(dbUser) {
-      res.json(dbUser);
-    });
+      else {
+          //delete existing user, add error
+          req.session.user = false;
+          req.session.error = 'authorization failed'
+      }
+      res.json(req.session);
+  })
   });
-};
+  
+module.exports = authRoutes

@@ -1,14 +1,16 @@
 var db = require("../models");
+const express = require("express")
+const storyRoute = express.Router()
 
-module.exports = function(app) {
+
   // Find all story and return them to the user with res.json
-  app.get("/api/story", function(req, res) {
-    db.Story.findAll({}).then(function(dbStory) {
+  storyRoute.get("/story", function(req, res) {
+    db.Story.findAll({include:[db.User]}).then(function(dbStory) {
       res.json(dbStory);
     });
   });
 
-  app.get("/api/story/:id", function(req, res) {
+  storyRoute.get("/story/:id", function(req, res) {
     // Find one Story with the id in req.params.id and return them to the user with res.json
     db.Story.findOne({
       where: {
@@ -19,7 +21,7 @@ module.exports = function(app) {
     });
   });
 
-  app.post("/api/story", function(req, res) {
+  storyRoute.post("/story", function(req, res) {
     // Create an Story with the data available to us in req.body
     console.log(req.body);
     db.Story.create(req.body).then(function(dbStory) {
@@ -27,7 +29,7 @@ module.exports = function(app) {
     });
   });
 
-  app.delete("/api/story/:id", function(req, res) {
+  storyRoute.delete("/story/:id", function(req, res) {
     // Delete the Story with the id available to us in req.params.id
     db.Story.destroy({
       where: {
@@ -37,4 +39,6 @@ module.exports = function(app) {
       res.json(dbStory);
     });
   });
-};
+
+
+module.exports = storyRoute
