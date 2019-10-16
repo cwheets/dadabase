@@ -23,10 +23,20 @@ const storyRoute = express.Router()
 
   storyRoute.post("/story", function(req, res) {
     // Create an Story with the data available to us in req.body
-    console.log(req.body);
-    db.Story.create(req.body).then(function(dbStory) {
-      res.json(dbStory);
-    });
+    if(!req.session.user){
+      // res.redirect("/auth/login")
+      res.send("you must login to post!")
+    }
+    else{
+      db.Story.create({
+        title:req.body.title,
+        story:req.body.story,
+        UserId:req.session.user.id
+
+      }).then(function(dbStory) {
+        res.json(dbStory);
+      });
+    }
   });
 
   storyRoute.delete("/story/:id", function(req, res) {

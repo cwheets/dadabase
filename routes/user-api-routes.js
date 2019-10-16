@@ -46,5 +46,8 @@ const authRoutes = express.Router()
       res.json(req.session);
   })
   });
+  authRoutes.get("/loggedInuserName",(req,res)=>{
+    res.json(req.session.user.username)
+  })
   
 module.exports = authRoutes
