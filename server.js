@@ -8,8 +8,6 @@ var db = require("./models");
 
 const askRouter = require('./routes/ask-api-routes');
 
-const commentRouter = require("./routes/ask_comments-api-routes.js")
-
 const jokesRouter = require("./routes/jokes-api-routes")
 
 const storyRouter = require("./routes/story-api-routes")
@@ -25,16 +23,15 @@ app.use(express.json());
 // Static directory
 app.use(express.static("assets"));
 
-// Routes
-// =============================================================
+
+app.use(session({ secret: process.env.SESSION_SECRET, resave: true, saveUninitialized: true }));
 
 app.use('/api', askRouter)
-app.use('/api', commentRouter)
 app.use('/api', jokesRouter)
 app.use('/api', storyRouter)
 app.use('/auth', authRouter)
 
-app.use(session({ secret: process.env.SESSION_SECRET, resave: true, saveUninitialized: true }));
+
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================

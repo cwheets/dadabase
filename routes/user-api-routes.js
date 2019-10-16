@@ -13,10 +13,10 @@ const authRoutes = express.Router()
   });
 
   authRoutes.post('/user/register',function(req,res){
-
+    console.log("test")
     db.User.create({
 
-        name:req.body.name,
+        username:req.body.username,
         password:req.body.password
 
     }).then(function(newUser){
@@ -30,7 +30,7 @@ const authRoutes = express.Router()
     
     db.User.findOne({
       where:{
-          name:req.body.name
+          username: req.body.username
 
       }}).then(function(dbUser){
           //compares password send in req.body to one in database, will return true if matched.
