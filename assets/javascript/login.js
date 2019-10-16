@@ -14,7 +14,7 @@ $('#login').on('submit', function(event) {
     var passwordLogin = $("#password-login").val().trim();
 
     $.ajax({
-        url: '/user/login',
+        url: '/auth/user/login',
         method: 'POST',
         data: {
             username: usernameLogin,
@@ -38,7 +38,7 @@ $(`#register`).submit(function(event){
 
   
     $.ajax({
-        url: '/user/register',
+        url: '/auth/user/register',
         method: 'POST',
         data: {
             username: usernameRegister,
@@ -46,6 +46,7 @@ $(`#register`).submit(function(event){
         }
     }).then(function(response){
         console.log(response)
+        window.location.replace("/index.html")
     })
   }else {
       alert("your passwords do not match")

@@ -19,6 +19,7 @@ module.exports = function(sequelize, DataTypes) {
     User.associate = function(models) {
         // add associations here
         // ex:User.hasMany(models.BlogPost);
+        User.hasMany(models.Story)
     };
     //sequelize hook, will run before model instance is created and hash password
     User.beforeCreate(function(user) {
