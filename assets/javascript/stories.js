@@ -1,51 +1,80 @@
-$(`#story-submit`).submit(event => {
-    event.preventDefault()
-
-    var title = $('#storyTitle').val().trim()
-    var story = $('#storyBody').val().trim()
-
+$(document).ready(event => {
     $.ajax({
-        url: "/api/story",
-        method: "POST",
-        data: {
-            title: title,
-            story: story
-            
+        url: `/api/story`,
+        method: "GET"
+      }).then(read => {
+        $("#cardBody").empty();
+        console.log(read)
+        for (let i = 0; i < read.length; i++) {
+          var user = $("<p>")
+          var newtitle = $("<h3>");
+          var newstory = $("<p>");
+          var div = $("<div>");
+
+          newtitle.text(read[i].title);
+          newstory.text(read[i].story);
+          user.text(read[i].User.username);
+
+          div.addClass("card");
+
+          div.append(newtitle);
+          div.append(newstory);
+           div.append(user)
+          $("#cardBody").append(div);
         }
+      });
+})
+
+
+
+$(`#story-submit`).submit(event => {
+  event.preventDefault();
+  
+
+  var title = $("#storyTitle")
+    .val()
+    .trim();
+  var story = $("#storyBody")
+    .val()
+    .trim();
+  if (title === "" || story === "") {
+  } else {
+    $.ajax({
+      url: "/api/story",
+      method: "POST",
+      data: {
+        title: title,
+        story: story
+      }
     }).then(response => {
-        console.log(response)
- 
-            $.ajax({
-                url: `/api/story`,
-                method: "GET"
-            }).then(read => {
-                    
-                $("#cardBody").empty()
+      if (response === "you must login to post!") {
+        alert(response);
+      } else {
+          $.ajax({
+            url: `/api/story`,
+            method: "GET"
+          }).then(read => {
+            $("#cardBody").empty();
+            console.log(read)
+            for (let i = 0; i < read.length; i++) {
+              var user = $("<p>")
+              var newtitle = $("<h3>");
+              var newstory = $("<p>");
+              var div = $("<div>");
 
-                for (let i = 0; i < read.length; i++) {
-                   
+              newtitle.text(read[i].title);
+              newstory.text(read[i].story);
+              user.text("-" + read[i].User.username);
 
-                    var newtitle = $("<h3>")
-                    var newstory = $("<p>")
-                    var div = $("<div>")
+              div.addClass("card");
 
-                    newtitle.text(read[i].title)
-                    newstory.text(read[i].story)
-
-                    div.addClass("card")
-
-                    div.append(newtitle)
-                    div.append(newstory)
-
-                    $("#cardBody").append(div)
-                    
-                    
-                     
-    
-                
-                } 
-                
-            })
-        
-        })
-    })
+              div.append(newtitle);
+              div.append(newstory);
+               div.append(user)
+              $("#cardBody").append(div);
+            }
+          });
+      }
+    });
+  }
+});

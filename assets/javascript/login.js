@@ -45,8 +45,8 @@ $(`#register`).submit(function(event){
             password: passwordRegisterOne
         }
     }).then(function(response){
-        console.log(response)
-        window.location.replace("/index.html")
+        $("#register").hide()
+        $("#login").show()
     })
   }else {
       alert("your passwords do not match")

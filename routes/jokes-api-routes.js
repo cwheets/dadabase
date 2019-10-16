@@ -4,7 +4,9 @@ const express = require('express')
 const jokeRouter = express.Router()
 
   jokeRouter.get("/jokes", function(req, res) {
-    db.Jokes.findAll({}).then(function(dbJokes) {
+    db.Jokes.findAll({
+      include: [db.User]
+    }).then(function(dbJokes) {
       res.json(dbJokes);
     });
   });
@@ -22,9 +24,18 @@ const jokeRouter = express.Router()
 
   jokeRouter.post("/jokes", function(req, res) {
     // Create an Jokes with the data available to us in req.body
-    db.Jokes.create(req.body).then(function(dbJokes) {
+    if(!req.session.user){
+      // res.redirect("/auth/login")
+      res.send("you must login to post!")
+    } else{
+    db.Jokes.create({
+      joke: req.body.joke,
+      userId: req.session.user.id
+
+    }).then(function(dbJokes) {
       res.json(dbJokes);
     });
+  }
   });
 
   jokeRouter.delete("/jokes/:id", function(req, res) {
