@@ -25,7 +25,6 @@ $(`#joke-form`).submit(event => {
 
             newJoke.text(results);
             
-            console.log($(`#carousel1holder`));
             var newJokeDiv = $('<div>');
             newJokeDiv.attr("class", "carousel-item");
             newJokeDiv.append(newJoke);
