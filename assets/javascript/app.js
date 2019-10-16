@@ -1,7 +1,7 @@
 // Start of carousel with jokes
 
 $('.carousel').carousel({
-    interval: 3000
+    interval: 7000
   })
 
   for (let i = 0; i < 4; i++) {
