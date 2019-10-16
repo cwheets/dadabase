@@ -1,0 +1,139 @@
+/* Top Nav */
+
+ul.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-image: url("../images/layer3.jpg");
+}
+
+ul.topnav li {float: left;}
+
+ul.topnav li a {
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+  font-family: 'Bangers', cursive;
+  font-size: 24px;
+  color: yellow;
+  text-shadow: 1px 1px orangered;
+}
+
+
+ul.topnav li.right {float: right;}
+
+
+
+@media screen and (max-width: 600px) {
+  h1,
+  ul.topnav li.right, 
+  ul.topnav li {float: none;}
+}
+
+
+h1{
+  margin-left: 250px;
+  font-size: 50px;
+  font-family: 'Fontdiner Swanky', cursive;
+  color:  rgba(255, 255, 0, 0.911);
+  text-shadow: 2px 2px red;
+}
+
+/* <!-- Body --> */
+
+body{
+  background-image: url("../images/layer3.jpg");
+  
+}
+
+.backgroundCards{
+  background-image: url("../images/GAL-GALPOP3247-PHONE-PopArt-Background4-.jpg");
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 55%;
+}
+
+.flexThis{
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+}
+
+
+#inputBackground{
+  background-image: url("../images/GAL-GALPOP3247-PHONE-PopArt-Background4-.jpg");
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  
+  
+}
+
+
+#storyTitle{
+  width: 100%;
+  margin: 2.5px;
+  border-radius: .25rem;
+}
+#storyBody{
+  width: 100%;
+  margin: 2.5px;
+  border-radius: .25rem;
+}
+
+#storyButton{
+  border-radius: .25rem;
+  width: 25%;
+  float: right;
+  background-color: transparent;
+  border: none;
+  font-family: 'Bangers', cursive;
+  font-size: 24px;
+  color: white;
+  text-shadow: 1px 1px 2px black, 0 0 25px yellow, 0 0 5px yellowgreen;
+}
+
+#storyButton:hover{
+  border: solid yellow 2px;
+}
+
+#cardBody{
+  width: 100%;
+  margin: 2.5px;
+  border-radius: .25rem;
+  border: solid 1px black;
+  height: 60vh;
+  overflow-y: auto  ;
+  /* height: auto; */
+
+}
+
+#postArea{
+  display: flex;
+  flex-direction: column;
+  width: 55%;
+  
+}
+
+#buttonDiv{
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+footer{
+  position: fixed;
+  margin-bottom: 0%;
+  bottom: 0;
+  width: 100%;
+  font-family: 'Fontdiner Swanky', cursive;
+  color:  rgba(255, 255, 0, 0.911);
+  text-shadow: 2px 2px red;
+  text-align: center;
+}
+.card{
+  border-radius:.25rem;
+}

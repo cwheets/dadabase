@@ -1,0 +1,132 @@
+
+/* Top Nav */
+
+ul.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-image: url("../images/layer3.jpg");
+}
+
+ul.topnav li {float: left;}
+
+ul.topnav li a {
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+  font-family: 'Bangers', cursive;
+  font-size: 24px;
+  color: yellow;
+  text-shadow: 1px 1px orangered;
+}
+
+
+ul.topnav li.right {float: right;}
+
+
+
+@media screen and (max-width: 600px) {
+  ul.topnav li.right, 
+  ul.topnav li {float: none;}
+}
+
+
+h1{
+  margin-left: 350px;
+  font-size: 50px;
+  font-family: 'Fontdiner Swanky', cursive;
+  color: yellow;
+  text-shadow: 2px 2px red;
+}
+/* End of Nav bar */
+
+
+/* <!-- Body --> */
+body{ 
+  background-image: url("../images/dad.jpg");
+  background-size: cover;
+} 
+
+
+.carousel{
+  height: 250px;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+p{
+  margin-top: 220px;
+  margin-left: 2;
+}
+
+.carousel-control-next-icon,.carousel-control-prev-icon {
+  margin-top: 220px;
+  margin-left: 2;
+}
+
+.container{
+  padding-top:5%;
+  height: 40%;
+  width: 40%;
+}
+
+.card-deck{
+    display: flex;
+}
+/* Positioning the cards on the About Us page */
+.container{
+    margin-left: 30%;
+    margin-top: 0;
+    margin-bottom: 5%;
+}
+div.card-body{
+  padding: 0;
+  margin:5%;
+  font-size: 80%;
+}
+.btn.btn-default.btn-rounded.mb-4{
+  background: rgb(238, 223, 9);
+}
+
+/* CSS for comment section
+.thumbnail {
+    padding:0px;
+}
+.panel {
+	position:relative;
+}
+.panel>.panel-heading:after,.panel>.panel-heading:before{
+	position:absolute;
+	top:11px;left:-16px;
+	right:100%;
+	width:0;
+	height:0;
+	display:block;
+	content:" ";
+	border-color:transparent;
+	border-style:solid solid outset;
+	pointer-events:none;
+}
+.panel>.panel-heading:after{
+	border-width:7px;
+	border-right-color:#f7f7f7;
+	margin-top:1px;
+	margin-left:2px;
+}
+.panel>.panel-heading:before{
+	border-right-color:#ddd;
+	border-width:8px;
+} */
+
+footer{
+  position: fixed;
+  margin-bottom: 0%;
+  bottom: 0;
+  width: 100%;
+  font-family: 'Fontdiner Swanky', cursive;
+  color:  rgba(255, 255, 0, 0.911);
+  text-shadow: 2px 2px red;
+}

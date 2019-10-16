@@ -1,0 +1,98 @@
+/* Top Nav */
+
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-image: url("../images/layer3.jpg");
+  }
+  
+  ul.topnav li {float: left;}
+  
+  ul.topnav li a {
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    font-family: 'Bangers', cursive;
+    font-size: 24px;
+    color: yellow;
+    text-shadow: 1px 1px orangered;
+  }
+  
+  
+  ul.topnav li.right {float: right;}
+  
+  @media screen and (max-width: 600px) {
+    ul.topnav li.right, 
+    ul.topnav li {float: none;}
+  }
+  h1{
+    margin-left: 250px;
+    font-size: 50px;
+    font-family: 'Fontdiner Swanky', cursive;
+    color: yellow;
+    text-shadow: 2px 2px red;
+  }
+/* End of Nav bar */
+
+/* container for login form */
+div.container{
+    background-image: url("../images/GAL-GALPOP3247-PHONE-PopArt-Background4-.jpg");
+    border-radius: 2%;
+    width: 40%;
+    box-shadow: 3px 3px rgb(41, 40, 40, 0.3);
+}
+#submitBtn{
+    margin-left: 0;
+}
+
+button.btn.btn-primary{
+    margin-bottom: 2%;
+    background: white;
+    color: gray;
+    text-shadow: 1px 1px black;
+    font-family: 'Fontdiner Swanky', cursive;
+    margin-left: 50%;
+    border-color: black;
+}
+
+body{
+    background-image: url("../images/layer3.jpg");
+}
+
+#registerBtn{
+    color: white;
+    text-shadow: 3px 3px black;
+    font-family: 'Fontdiner Swanky', cursive;
+}
+
+h2{
+    color: white;
+    text-shadow: 3px 3px black;
+    font-family: 'Fontdiner Swanky', cursive;
+    margin-left: 30%;
+    margin-top: 2%;
+}
+
+#username-login, #password-login, #username-register, #password-register-one, #password-register-two{
+    color: black;
+    text-shadow: 1px 1px gray;
+    font-family: 'Fontdiner Swanky', cursive;
+    border-color: black;
+}
+
+
+/* End of container for login form */
+
+/* Footer */
+  footer{
+    position: fixed;
+    margin-bottom: 0%;
+    bottom: 0;
+    width: 100%;
+    font-family: 'Fontdiner Swanky', cursive;
+    color:  rgba(255, 255, 0, 0.911);
+    text-shadow: 2px 2px red;
+  }
+/* End of Footer */
